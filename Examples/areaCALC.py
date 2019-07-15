@@ -3,12 +3,11 @@ import cv2
 import extcolors
 from matplotlib import pyplot as plt
 
-0.009
-path1 = "shape2.jpg"
-path2 = "shape3.jpg"
+path1 = "shape1.jpg"
+# path2 = "shape2.jpg"
 path2 = "shape32.jpg"
 # path2 = "shape1 - Copy.jpg"
-path1 = "shape31.jpg"
+# path1 = "shape31.jpg"
 # path1 = "apple_logo.jpg"
 path = "img.jpg"
 
@@ -70,11 +69,13 @@ area1 = bgExtract(path1)
 area2 = bgExtract(path2)
 if area1 > area2:
     ratio = area1/area2
-    print("so the ratio of scale is img1/img2 ---> {0:.2f}".format(ratio))
+    pathStr = path1 + "/" + path2
+    print("The "+ pathStr +" ratio ---> {0:.2f}".format(ratio))
 
 else:
     ratio = area2 / area1
-    print("so the ratio of scale is img2/img1 ---> {0:.2f}".format(ratio))
+    pathStr = path2 + "/" + path1
+    print("The " + pathStr + " ratio ---> {0:.2f}".format(ratio))
 
 # bgExtract(path)
 plt.show("The colors")
